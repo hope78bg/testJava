@@ -5,6 +5,15 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class ArrayReverseExample {
+    public static int[] reverseArray(int[] arr) {
+        int length = arr.length;
+        int[] reversed = new int[length];
+        for (int index = 0; index < length; index++) {
+            reversed[length- index -1] = arr[index];
+        }
+        return reversed;
+    }
+
     public static void main(String[] args) {
         System.out.print("Enter some numbers separated by commas: ");
 
@@ -33,10 +42,6 @@ public class ArrayReverseExample {
             array[i] = l.remove(0);
         }
 
-        int[] reversed = new int[length];
-        for (int index = 0; index < length; index++) {
-            reversed[length- index -1] = array[index];
-        }
-        System.out.println(Arrays.toString(reversed));
+        System.out.println(Arrays.toString(reverseArray(array)));
     }
 }
